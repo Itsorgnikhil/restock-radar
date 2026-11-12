@@ -15,9 +15,9 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 # Create non-privileged user and data directory
-RUN useradd -m -u 1000 radar && \
+RUN (useradd -m radar || true) && \
     mkdir -p /app/data && \
-    chown -R radar:radar /app
+    chown -R radar:radar /app 2>/dev/null || true
 
 USER radar
 
