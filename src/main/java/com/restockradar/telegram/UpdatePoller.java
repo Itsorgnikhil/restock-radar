@@ -82,7 +82,9 @@ public class UpdatePoller {
                     Thread.sleep(backoffMs);
                 } catch (InterruptedException ie) {
                     Thread.currentThread().interrupt();
-                    break;
+                    if (!running.get()) {
+                        break;
+                    }
                 }
             }
         }

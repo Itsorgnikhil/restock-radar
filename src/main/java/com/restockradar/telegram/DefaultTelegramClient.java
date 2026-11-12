@@ -172,8 +172,9 @@ public class DefaultTelegramClient implements TelegramClient {
 
             JsonNode root = objectMapper.readTree(response);
             if (!root.path("ok").asBoolean(false)) {
-                log.warn("Telegram getUpdates failed: {}", root.path("description").asText());
-                return Collections.emptyList();
+                String desc = root.path("description").asText();
+                log.warn("Telegram getUpdates failed: {}", desc);
+                throw new RuntimeException("Telegram API getUpdates error: " + desc);
             }
 
             JsonNode results = root.path("result");
