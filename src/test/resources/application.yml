@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+telegram:
+  bot-token: test-token
+  owner-chat-id: 123456789
+  poll-timeout-seconds: 1
+
+monitoring:
+  default-interval-seconds: 600
+  min-interval-seconds: 300
+  request-spacing-ms: 0
+  out-of-stock-confirmations: 2
+  alert-on-first-check: true

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: restock-radar
+  datasource:
+    url: jdbc:h2:file:./data/radar
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+telegram:
+  bot-token: ${TELEGRAM_BOT_TOKEN:}
+  owner-chat-id: ${TELEGRAM_CHAT_ID:0}
+  poll-timeout-seconds: 25
+
+monitoring:
+  default-interval-seconds: 60
+  rooter-interval-seconds: 15
+  min-interval-seconds: 10
+  request-spacing-ms: 1000
+  out-of-stock-confirmations: 2
+  alert-on-first-check: true

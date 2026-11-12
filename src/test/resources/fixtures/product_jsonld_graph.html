@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph JSON-LD Product</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Game Store"
+        },
+        {
+          "@type": "Product",
+          "name": "PlayStation Plus 1 Month",
+          "offers": {
+            "@type": "Offer",
+            "price": "499.00",
+            "priceCurrency": "INR",
+            "availability": "http://schema.org/InStock"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <h1>Graph Example</h1>
+</body>
+</html>

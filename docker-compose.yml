@@ -1,0 +1,11 @@
+services:
+  restock-radar:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: restock-radar
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
